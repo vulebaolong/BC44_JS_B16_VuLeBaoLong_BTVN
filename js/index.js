@@ -41,7 +41,7 @@ toggleTheme.addEventListener("click", (e) => {
 const inputChangeColor = document.querySelector(".form-range");
 const root = document.querySelector(":root");
 inputChangeColor.addEventListener("input", function name() {
-    // console.log(inputChangeColor.value);
+    console.log(inputChangeColor.value);
     root.style.setProperty("--hue", inputChangeColor.value);
 });
 
@@ -83,7 +83,8 @@ const calSumInputNEL = $(".calSum_input-n");
 function calSum() {
     let x = +calSumInputXEL.value;
     let n = +calSumInputNEL.value;
-    for (let i = 1; i <= n; i++) {
+    let count = n;
+    for (let i = 1; i <= count; i++) {
         if (i > 1) {
             n = n + Math.pow(x, i);
         }
