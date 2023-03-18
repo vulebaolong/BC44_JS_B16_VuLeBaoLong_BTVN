@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Calculator Javascript 16</title>
+
+        <!-- favicon -->
+        <link rel="icon" href="./img/java_script_32.png" sizes="32x32" type="image/png" />
+        <link rel="icon" href="./img/java_script_16.png" sizes="16x16" type="image/png" />
+
+        <!-- BOOTSTRAP -->
+        <link rel="stylesheet" href="./vendor/bootstrap/bootstrap.min.css" />
+
+        <!-- FONT GOOGLE -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- FONT AWESOME -->
+        <link rel="stylesheet" href="./vendor/fontawesome/css/all.min.css" />
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="./css/style.css" />
+
+        <!-- ClEAVE -->
+        <script src="./js/cleave/cleave.min.js"></script>
+
+        <!-- JS -->
+        <script defer src="./js/index.js"></script>
+    </head>
+    <body>
+        <section class="calculator-section">
+            <div class="container">
+                <div class="calculator">
+                    <div class="control">
+                        <div class="change_color">
+                            <label for="customRange1" class="form-label m-0">Color</label>
+                            <input
+                                type="range"
+                                class="form-range"
+                                min="0"
+                                max="360"
+                                id="customRange1"
+                            />
+                        </div>
+                        <div class="toggle_theme">
+                            <i
+                                class="toggle_theme-icon toggle_theme-sun hide fa-solid fa-sun"
+                            ></i>
+                            <i
+                                class="toggle_theme-icon toggle_theme-moon fa-solid fa-moon"
+                            ></i>
+                        </div>
+                    </div>
+                    <header class="calculator-header mt-5">
+                        <h1 class="fw-bold text-center">Calculator Javascript 16</h1>
+                    </header>
+                    <div class="calculator-content d-flex align-items-start mt-5">
+                        <div
+                            class="content_left nav flex-column nav-pills me-3 gap-1"
+                            id="v-pills-tab"
+                            role="tablist"
+                            aria-orientation="vertical"
+                        >
+                            <div class="btn_nav">
+                                <i class="fa-solid fa-chevron-right"></i>
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </div>
+
+                            <!-- TÍNH SỐ NGUYÊN DƯƠNG -->
+                            <button
+                                class="nav-link active fw-semibold"
+                                id="calPositiveIntegers"
+                                data-bs-toggle="pill"
+                                data-bs-target="#v-calPositiveIntegers"
+                                type="button"
+                                role="tab"
+                                aria-controls="v-calPositiveIntegers"
+                                aria-selected="true"
+                            >
+                                Bài 1
+                            </button>
+
+                            <!-- TÍNH TỔNG -->
+                            <button
+                                class="nav-link fw-semibold"
+                                id="calSum"
+                                data-bs-toggle="pill"
+                                data-bs-target="#v-calSum"
+                                type="button"
+                                role="tab"
+                                aria-controls="v-calSum"
+                                aria-selected="false"
+                            >
+                                Bài 2
+                            </button>
+
+                            <!-- TÍNH GIAI THỪA -->
+                            <button
+                                class="nav-link fw-semibold"
+                                id="calFactorial"
+                                data-bs-toggle="pill"
+                                data-bs-target="#v-calFactorial"
+                                type="button"
+                                role="tab"
+                                aria-controls="v-calFactorial"
+                                aria-selected="false"
+                            >
+                                Bài 3
+                            </button>
+
+                            <!-- TẠO DIV-->
+                            <button
+                                class="nav-link fw-semibold"
+                                id="createDiv"
+                                data-bs-toggle="pill"
+                                data-bs-target="#v-createDiv"
+                                type="button"
+                                role="tab"
+                                aria-controls="v-createDiv"
+                                aria-selected="false"
+                            >
+                                Bài 4
+                            </button>
+                        </div>
+                        <div class="content_right tab-content" id="v-pills-tabContent">
+                            <!-- TÍNH SỐ NGUYÊN DƯƠNG -->
+                            <div
+                                class="tab-pane fade show active"
+                                id="v-calPositiveIntegers"
+                                role="tabpanel"
+                                aria-labelledby="calPositiveIntegers"
+                                tabindex="0"
+                            >
+                                <h3 class="fw-semibold">Tính số nguyên dương</h3>
+                                <form
+                                    class="calPositiveIntegers d-flex flex-column gap-2 mt-4"
+                                >
+                                    <div>
+                                        <button
+                                            type="submit"
+                                            class="calPositiveIntegers_btn-submit btn btn-primary"
+                                        >
+                                            Tính số nguyên dương
+                                        </button>
+                                    </div>
+                                    <div
+                                        class="calPositiveIntegers_result alert alert-success mt-3 fw-semibold"
+                                        role="alert"
+                                    >
+                                        Kết quả:
+                                    </div>
+                                </form>
+                            </div>
+
+                            <!-- TÍNH TỔNG -->
+                            <div
+                                class="tab-pane fade"
+                                id="v-calSum"
+                                role="tabpanel"
+                                aria-labelledby="calSum"
+                                tabindex="0"
+                            >
+                                <h3 class="fw-bold">Tính tổng</h3>
+                                <form class="calSum d-flex flex-column gap-2 mt-4">
+                                    <div class="form-floating">
+                                        <input
+                                            type="text"
+                                            class="calSum_input-x form-control"
+                                            id="calSum-x"
+                                            placeholder="Nhập số x"
+                                            required
+                                        />
+                                        <label for="calSum-x">Nhập số x</label>
+                                    </div>
+                                    <div class="form-floating">
+                                        <input
+                                            type="text"
+                                            class="calSum_input-n form-control"
+                                            id="calSum-n"
+                                            placeholder="Nhập số y"
+                                            required
+                                        />
+                                        <label for="calSum-n">Nhập số y</label>
+                                    </div>
+                                    <div>
+                                        <button
+                                            type="submit"
+                                            class="calSum_btn-submit btn btn-primary"
+                                        >
+                                            Tính tổng
+                                        </button>
+                                    </div>
+                                    <div
+                                        class="calSum_result alert alert-success mt-3 fw-semibold"
+                                        role="alert"
+                                    >
+                                        Kết quả:
+                                    </div>
+                                </form>
+                            </div>
+
+                            <!-- TÍNH GIAI THỪA -->
+                            <div
+                                class="tab-pane fade"
+                                id="v-calFactorial"
+                                role="tabpanel"
+                                aria-labelledby="calFactorial"
+                                tabindex="0"
+                            >
+                                <h3 class="fw-bold">Tính giai thừa</h3>
+                                <form class="calFactorial d-flex flex-column gap-2 mt-4">
+                                    <div class="form-floating">
+                                        <input
+                                            type="text"
+                                            class="calFactorialName form-control"
+                                            id="calFactorialName"
+                                            placeholder="Nhập số"
+                                            required
+                                        />
+                                        <label for="calFactorialName">Nhập số</label>
+                                    </div>
+                                    <div>
+                                        <button
+                                            type="submit"
+                                            class="calFactorial_btn-submit btn btn-primary"
+                                        >
+                                            Tính giai thừa
+                                        </button>
+                                    </div>
+                                    <div
+                                        class="calFactorial_result alert alert-success mt-3 fw-semibold"
+                                        role="alert"
+                                    >
+                                        Kết quả:
+                                    </div>
+                                </form>
+                            </div>
+
+                            <!-- TẠO DIV-->
+                            <div
+                                class="tab-pane fade"
+                                id="v-createDiv"
+                                role="tabpanel"
+                                aria-labelledby="createDiv"
+                                tabindex="0"
+                            >
+                                <h3 class="fw-bold">Tạo div</h3>
+                                <form class="createDiv d-flex flex-column gap-2 mt-4">
+                                    <div>
+                                        <button
+                                            type="submit"
+                                            class="createDiv_btn-submit btn btn-primary"
+                                        >
+                                            Tạo div
+                                        </button>
+                                    </div>
+                                    <div
+                                        class="createDiv_result alert alert-success mt-3 fw-semibold"
+                                        role="alert"
+                                    >
+                                        Kết quả:
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BOOTSTRAP -->
+        <script src="./vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
