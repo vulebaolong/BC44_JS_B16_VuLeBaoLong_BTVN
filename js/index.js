@@ -96,7 +96,7 @@ function calSum() {
 calSumEl.addEventListener("submit", function (e) {
     e.preventDefault();
     const result = calSum();
-    calSumResultEL.innerHTML = `Kết quả:  ${result}`;
+    calSumResultEL.innerHTML = `Kết quả: ${result}`;
 });
 
 // =================================================================================
@@ -150,5 +150,5 @@ function createDiv() {
 createDivEL.addEventListener("submit", (e) => {
     e.preventDefault();
     const result = createDiv();
-    createDivResultEL.innerHTML = `Kết quả: <br>${result}`;
+    createDivResultEL.innerHTML = `<p class='mb-3'>Kết quả: </p>${result}`;
 });
